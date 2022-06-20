@@ -9,18 +9,22 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+<body id="app2">
     <header>
         <h1 class="fc">Food Corner</h1>
     </header>
     <main>
-        <section>
+        <section class="sec-1">
             <div>
                 <input type="text" id="text-value" value="" placeholder="i like to eat ..." class="fc-input">
                 <button type="button" class="fc-button" onclick="printValue()">save</button>
             </div>
+        </section>
+        <section class="sec-2">
             <div>
-                <ul id="answershow"></ul>
+                <ul id="answershow" class="food-container">
+                    <li class="food-item">asdfasd</li>
+                </ul>
             </div>
         </section>
     </main>

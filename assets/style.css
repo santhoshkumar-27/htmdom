@@ -21,8 +21,12 @@ header {
 main {
     padding: 50px;
 }
-main >section > div {
+main> .sec-1 > div { 
     text-align: center;
+}
+main> .sec-2 > div {
+    text-align: center;
+    margin-inline: auto;
 }
 .fc-input{
     padding: 5px 10px;
@@ -34,4 +38,25 @@ main >section > div {
     border-radius: 5px;
     background: burlywood;
     cursor: pointer;
+}
+#app2 {
+    background-color: #c9afaf;
+}
+.sec-1 {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+.sec-2 {
+    background: white;
+    padding: 30px;
+}
+.food-container {
+    list-style: none;
+    text-align: start;
+}
+.food-item {
+    padding: 5px;
+    border: 1px solid black;
+    margin: 10px;
 }
