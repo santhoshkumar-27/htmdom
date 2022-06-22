@@ -27,5 +27,27 @@ function printValue() {
 // https://stackoverflow.com/questions/222841/most-efficient-way-to-convert-an-htmlcollection-to-an-array
 
 
+// let liEl = document.getElementsByTagName('li');
+// liEl = [...liEl];
+// console.log('liEl', liEl);
+// let nameEl = document.getElementsByName('inputValue')
+// console.log('nameEl', nameEl);
+
+// htmlcollectio are live collection
+// HTMLCollection is not a Array it has specific feature of live collection, if the dom nodes added the update the htmlcollection
+// https://stackoverflow.com/questions/12770147/is-htmlcollection-an-array
+
 // console.log(document.getElementsByClassName('food-item'))
 // console.log(document.getElementsByClassName('food-item veg')) this get the html of class have both food-item and veg
+
+// querySelector and querySelectorAll
+// const query = document.querySelector('section:last-child');
+// const query = document.querySelector('section > div > input') //first occarance
+// like css selector
+const query  = document.querySelectorAll('li')
+console.log('query', query)
+// query selector takes 1st element
+
+// getelement it returns the html element in collection
+
+// but in query selector it gives node list
