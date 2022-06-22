@@ -20,7 +20,8 @@ function printValue() {
         // foodItems.map(function(res) {
         //     console.log(res)
         // })
-        console.log(foodItems)
+        // console.log(foodItems)
+        createAlertViaDom();
     }
 }
 
@@ -44,10 +45,41 @@ function printValue() {
 // const query = document.querySelector('section:last-child');
 // const query = document.querySelector('section > div > input') //first occarance
 // like css selector
-const query  = document.querySelectorAll('li')
+const query = document.querySelectorAll('li')
 console.log('query', query)
 // query selector takes 1st element
 
 // getelement it returns the html element in collection
 
 // but in query selector it gives node list
+
+// <section class="alert">
+// <h2>Succesfully updated</h2>
+// </section>
+
+// const content = document.getElementById('content');
+// const alertBox = document.getElementById('alertBox');
+// console.log('content', content, alertBox);
+// const div = document.createElement('div');
+// div.className = "alert-success"
+// const textNode = document.createTextNode('successfully updated!')
+// div.append(textNode)
+// // div.textContent = "successfully  updated!"
+// // div.innerText = "successfully updated!"
+// // console.log('div', div)
+// // content.append(div) //for append to last child
+// content.prepend(div)
+
+function createAlertViaDom() {
+    const content = document.getElementById('content');
+    const alertBox = document.getElementById('alertBox');
+    const div = document.createElement('div');
+    div.className = "alert-success";
+    div.id = "alert-success";
+    const textNode = document.createTextNode('successfully updated!')
+    div.append(textNode);
+    alertBox.prepend(div);
+    setTimeout(()=> {
+        alertBox.removeChild(document.getElementById('alert-success'))
+    }, 2000)
+}

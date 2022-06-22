@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,14 +21,14 @@ header {
 main {
     padding: 50px;
 }
-main> .sec-1 > div { 
+main > .sec-1 > div {
     text-align: center;
 }
-main> .sec-2 > div {
+main > .sec-2 > div {
     text-align: center;
     margin-inline: auto;
 }
-.fc-input{
+.fc-input {
     padding: 5px 10px;
     text-align: center;
 }
@@ -59,4 +59,18 @@ main> .sec-2 > div {
     padding: 5px;
     border: 1px solid black;
     margin: 10px;
+}
+.content {
+    max-width: 700px;
+    margin-inline: auto;
+}
+.alert-success {
+    padding: 10px;
+    background-color: #608260;
+    text-align: center;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: 500;
+    border-left: 10px solid green;
+    border-radius: 6px;
 }
