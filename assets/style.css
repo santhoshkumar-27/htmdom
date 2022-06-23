@@ -13,7 +13,8 @@
 }
 
 header {
-    background-color: aqua;
+    background-color: #2e641340;
+    padding: 20px;
 }
 .fc {
     text-align: center;
@@ -31,34 +32,51 @@ main > .sec-2 > div {
 .fc-input {
     padding: 5px 10px;
     text-align: center;
+    width: 450px;
+    border-radius: 10px;
+    border: 1px solid #01019f;
 }
 .fc-button {
     padding: 7px 10px;
     border: none;
-    border-radius: 5px;
-    background: burlywood;
+    border-radius: 10px;
+    background: #4e536d;
+    border: 1px solid #01019f;
     cursor: pointer;
+    color: white;
+    width: 85px;
 }
 #app2 {
-    background-color: #c9afaf;
+    background-color: #e3f6ff;
 }
 .sec-1 {
     background-color: white;
     padding: 30px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px rgb(221 221 221);
 }
 .sec-2 {
     background: white;
     padding: 30px;
+    border-radius: 10px;
 }
 .food-container {
     list-style: none;
     text-align: start;
 }
 .food-item {
-    padding: 5px;
-    border: 1px solid black;
+    padding-left: 22px;
+    border: 1px solid #ba9f9f;
     margin: 10px;
+    border-radius: 10px;
+    padding-block: 10px;
+    text-transform: capitalize;
+}
+.food-item:hover {
+    background-color: lightcyan;
+    color: black;
+    cursor: pointer;
 }
 .content {
     max-width: 700px;
@@ -66,11 +84,21 @@ main > .sec-2 > div {
 }
 .alert-success {
     padding: 10px;
-    background-color: #608260;
+    background-color: #b4d2b4;
     text-align: center;
     margin-bottom: 5px;
     color: black;
     font-weight: 500;
     border-left: 10px solid green;
     border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cancelAlert {
+    padding: 2px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
 }
