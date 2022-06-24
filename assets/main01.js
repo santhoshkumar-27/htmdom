@@ -83,3 +83,23 @@ function createAlertViaDom() {
         alertBox.removeChild(document.getElementById('alert-success'))
     }, 2000)
 }
+// console.time('normal way start')
+// // for(let i = 1; i < 1001; i++) {
+// //     const liel = document.createElement('li');
+// //     liel.textContent = `food item ${i}`;
+// //     liel.classList.add('food-item')
+// //     ul.append(liel);
+// // }
+// console.timeEnd('normal way start')
+
+console.time('fragment way start')
+const fragment = document.createDocumentFragment();
+for(let i = 1; i < 1001; i++) {
+    const liel = document.createElement('li');
+    liel.textContent = `food item ${i}`;
+    liel.classList.add('food-item')
+    fragment.append(liel);
+}
+console.dir(fragment);
+ul.append(fragment)
+console.timeEnd('fragment way start')

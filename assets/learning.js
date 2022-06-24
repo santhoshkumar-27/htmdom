@@ -30,4 +30,4 @@ const innerhtml = `
 `;
 // inner html is string type 
 // but using the createElement is object type so we have lot of freedom to do rather than in innerHTML
-content.innerHTML += innerhtml;
+// content.innerHTML += innerhtml;
