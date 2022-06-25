@@ -2,13 +2,20 @@ let values = [];
 let textFieldValue = document.getElementById('text-value');
 let ul = document.getElementById('answershow')
 let foodItems = ul.getElementsByClassName('food-item')
+// console.log('ul', ul.parentNode.insertBefore(li, ul))
 function printValue() {
     if (textFieldValue.value) {
         let li = document.createElement('li');
         // li.appendChild(document.createTextNode(textFieldValue.value))
         li.innerText = textFieldValue.value;
         li.classList = 'food-item'
-        ul.appendChild(li);
+        // ul.appendChild(li);
+        // ul.append(li);// append means adding element to lastchild
+        // ul.prepend(li) //prepend means adding element to firstchild
+        // ul.before(li) //adding element before the any element
+        // ul.after(li) // adding element after the any element
+        ul.parentNode.insertBefore(li, ul) // same like the before()
+        ul.parentNode.insertBefore(li, ul.nextSibling) // same like the after()
         textFieldValue.value = '';
         // console.log(foodItems)
         // foodItems.forEach(element => {
@@ -24,6 +31,7 @@ function printValue() {
         createAlertViaDom();
     }
 }
+
 
 // https://stackoverflow.com/questions/222841/most-efficient-way-to-convert-an-htmlcollection-to-an-array
 
@@ -46,7 +54,7 @@ function printValue() {
 // const query = document.querySelector('section > div > input') //first occarance
 // like css selector
 const query = document.querySelectorAll('li')
-console.log('query', query)
+// console.log('query', query)
 // query selector takes 1st element
 
 // getelement it returns the html element in collection
@@ -91,15 +99,15 @@ function createAlertViaDom() {
 // //     ul.append(liel);
 // // }
 // console.timeEnd('normal way start')
-
-console.time('fragment way start')
-const fragment = document.createDocumentFragment();
-for(let i = 1; i < 1001; i++) {
-    const liel = document.createElement('li');
-    liel.textContent = `food item ${i}`;
-    liel.classList.add('food-item')
-    fragment.append(liel);
-}
-console.dir(fragment);
-ul.append(fragment)
-console.timeEnd('fragment way start')
+// create fragement document
+// console.time('fragment way start')
+// const fragment = document.createDocumentFragment();
+// for(let i = 1; i < 1001; i++) {
+//     const liel = document.createElement('li');
+//     liel.textContent = `food item ${i}`;
+//     liel.classList.add('food-item')
+//     fragment.append(liel);
+// }
+// console.dir(fragment);
+// ul.append(fragment)
+// console.timeEnd('fragment way start')
