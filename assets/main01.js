@@ -111,3 +111,40 @@ function createAlertViaDom() {
 // console.dir(fragment);
 // ul.append(fragment)
 // console.timeEnd('fragment way start')
+
+// insertAdjacentHTMl
+// ul.insertAdjacentHTML('afterbegin', '<li class="food-item">afterbegin</li>');
+// ul.insertAdjacentHTML('afterend', '<p>afterend</p>');
+// ul.insertAdjacentHTML('beforebegin', '<p>beforeBegin</p>');
+// ul.insertAdjacentHTML('beforeend', '<li class="food-item">beforeend</li>');
+
+// let li = document.createElement('li');
+// li.textContent = 'contain li of insertAdjacentElement'
+// li.classList.add('food-item')
+
+//insertAdjacentElement
+// ul.insertAdjacentElement('afterbegin', li);
+// ul.insertAdjacentElement('afterend', li);
+// ul.insertAdjacentElement('beforebegin', li);
+// ul.insertAdjacentElement('beforeend', li);
+
+// insertAdjacentText
+// ul.insertAdjacentText('afterbegin', 'hi afterbegin');
+// ul.insertAdjacentText('afterend', 'hi afterend');
+// ul.insertAdjacentText('beforebegin', 'hi beforebegin');
+// ul.insertAdjacentText('beforeend', 'hi beforeend');
+
+const newLi = document.createElement('li');
+newLi.innerText = 'this from replacement text';
+newLi.className = 'food-item'
+
+const replaceEl = document.querySelector('#answershow :first-child');
+// console.log('replace', replaceEl)
+// replaceEl.replaceWith(newLi) //new way
+// replaceEl.parentElement.replaceChild(newLi, replaceEl)
+// ul.replaceChildren('amount', 'money'); // its still this string not the node.
+// if we want the node, we need to create a object
+neali = document.createElement('li');
+neali.innerText = 'node of object';
+ul.replaceChildren(neali); //this node object of element
+// ul.replaceWith('amount', 'money') //it replace the current element with another node or el
