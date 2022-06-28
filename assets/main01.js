@@ -7,9 +7,10 @@ function printValue() {
     if (textFieldValue.value) {
         let li = document.createElement('li');
         let span = document.createElement('span');
-        let div = document.createElement('div')
+        let div = document.createElement('div');
         div.innerText = 'X';
-        div.className = 'click'
+        div.className = 'click';
+        // div.setAttribute('onclick', 'removeItem(event)'); //for clicking attribure
         span.innerText = textFieldValue.value;
         li.classList = 'food-item';
         li.append(span, div);
@@ -42,7 +43,8 @@ function attachItemRemoveListener() {
     clicks.map((el) => {
         el.addEventListener('click', function (event) {
             const elRemove = event.target.parentNode;
-            elRemove.remove();
+            elRemove.remove(); //new way;
+            // elRemove.parentNode.removeChild(elRemove); //old way
         });
     });
 }
