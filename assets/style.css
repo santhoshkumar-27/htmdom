@@ -67,11 +67,18 @@ main > .sec-2 > div {
 }
 .food-item {
     padding-left: 22px;
+    padding-right: 10px;
     border: 1px solid #ba9f9f;
     margin: 10px;
     border-radius: 10px;
     padding-block: 10px;
     text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.food-item button {
+    cursor: pointer;
 }
 .food-item:hover {
     background-color: lightcyan;

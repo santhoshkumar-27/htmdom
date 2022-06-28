@@ -6,16 +6,21 @@ let foodItems = ul.getElementsByClassName('food-item')
 function printValue() {
     if (textFieldValue.value) {
         let li = document.createElement('li');
+        let span = document.createElement('span');
+        let div = document.createElement('div')
+        div.innerText = 'X';
+        div.className = 'click'
+        span.innerText = textFieldValue.value;
+        li.classList = 'food-item';
+        li.append(span, div);
         // li.appendChild(document.createTextNode(textFieldValue.value))
-        li.innerText = textFieldValue.value;
-        li.classList = 'food-item'
         // ul.appendChild(li);
-        // ul.append(li);// append means adding element to lastchild
+        ul.append(li);// append means adding element to lastchild
         // ul.prepend(li) //prepend means adding element to firstchild
         // ul.before(li) //adding element before the any element
         // ul.after(li) // adding element after the any element
-        ul.parentNode.insertBefore(li, ul) // same like the before()
-        ul.parentNode.insertBefore(li, ul.nextSibling) // same like the after()
+        // ul.parentNode.insertBefore(li, ul) // same like the before()
+        // ul.parentNode.insertBefore(li, ul.nextSibling) // same like the after()
         textFieldValue.value = '';
         // console.log(foodItems)
         // foodItems.forEach(element => {
@@ -29,9 +34,19 @@ function printValue() {
         // })
         // console.log(foodItems)
         createAlertViaDom();
+        attachItemRemoveListener();
     }
 }
-
+function attachItemRemoveListener() {
+    const clicks = Array.from(document.querySelectorAll('.click'));
+    clicks.map((el) => {
+        el.addEventListener('click', function (event) {
+            const elRemove = event.target.parentNode;
+            elRemove.remove();
+        });
+    });
+}
+attachItemRemoveListener();
 
 // https://stackoverflow.com/questions/222841/most-efficient-way-to-convert-an-htmlcollection-to-an-array
 
@@ -87,7 +102,7 @@ function createAlertViaDom() {
     const textNode = document.createTextNode('successfully updated!')
     div.append(textNode);
     alertBox.prepend(div);
-    setTimeout(()=> {
+    setTimeout(() => {
         alertBox.removeChild(document.getElementById('alert-success'))
     }, 2000)
 }
@@ -134,17 +149,32 @@ function createAlertViaDom() {
 // ul.insertAdjacentText('beforebegin', 'hi beforebegin');
 // ul.insertAdjacentText('beforeend', 'hi beforeend');
 
-const newLi = document.createElement('li');
-newLi.innerText = 'this from replacement text';
-newLi.className = 'food-item'
+// const newLi = document.createElement('li');
+// newLi.innerText = 'this from replacement text';
+// newLi.className = 'food-item'
 
-const replaceEl = document.querySelector('#answershow :first-child');
+// const replaceEl = document.querySelector('#answershow :first-child');
 // console.log('replace', replaceEl)
 // replaceEl.replaceWith(newLi) //new way
 // replaceEl.parentElement.replaceChild(newLi, replaceEl)
 // ul.replaceChildren('amount', 'money'); // its still this string not the node.
 // if we want the node, we need to create a object
-neali = document.createElement('li');
-neali.innerText = 'node of object';
-ul.replaceChildren(neali); //this node object of element
+// neali = document.createElement('li');
+// neali.innerText = 'node of object';
+// ul.replaceChildren(neali); //this node object of element
 // ul.replaceWith('amount', 'money') //it replace the current element with another node or el
+
+
+
+// cloneNode() default false so they give clone of parent element only
+// if we need a children also we need cloneNode(true)
+// const cloneNode = ul.cloneNode(true);
+// console.log('cloneNode', cloneNode)
+
+
+// Deleting the remove ele
+function removeItem(event) {
+    // console.log('event', event.target.parentNode);
+    var removeElRef = event.target.parentNode;
+    removeElRef.remove();
+}
