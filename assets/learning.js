@@ -31,3 +31,30 @@ const message = document.querySelector('.alert-success');
 // inner html is string type 
 // but using the createElement is object type so we have lot of freedom to do rather than in innerHTML
 // content.innerHTML += innerhtml;
+
+// const arr = [
+//     'chicken briyani',
+//     'mutton briyani',
+//     'fish briyani'
+// ];
+
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(`This is form value ${arr[i]}`);
+// }
+
+// //for..of 
+// for(let i of arr) {
+//     console.log(`this is from for of ${i}`);
+// }
+
+// const containerEl = document.querySelectorAll('.food-container li');
+const containerEl = document.querySelectorAll('.food-container .food-item');
+// const containerEl = Array.from(document.querySelectorAll('.food-container .food-item'));
+
+// console.log(containerEl);
+let containerValue = [];
+for(let container of containerEl) {
+    // console.log(container.textContent.replace('x', ''));
+    containerValue.push(container.textContent.replace('x', ''));
+}
+console.log('container value', containerValue);
