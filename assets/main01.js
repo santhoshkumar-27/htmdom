@@ -180,3 +180,32 @@ function removeItem(event) {
     var removeElRef = event.target.parentNode;
     removeElRef.remove();
 }
+
+const accessParent = document.querySelector('#answershow');
+//html collection
+// console.log('accessParent', accessParent.children);
+
+// //querySelector node list
+// const accessChild = document.querySelectorAll('#answershow > li');
+// console.log('accessChild',accessChild);
+
+
+// // childNode
+// // node list can be anything like text, space, html, attributes, comments but htmlcollection is live collection is update the collection box but not that is javascript array
+// console.log('childnodes', accessParent.childNodes);
+
+
+// firstchild return the text node because of space we added
+// firstChild/firstElementChild
+// console.log(accessParent.firstChild)
+// console.log(accessParent.firstElementChild);
+
+
+// // lastChild/lastElementChild
+// console.log(accessParent.lastChild);
+// console.log(accessParent.lastElementChild);
+const fc = document.querySelector('.fc');
+// console.log(fc.children) //empty
+// console.log(fc.children) //empty
+console.log(fc.firstChild); //returns a text node
+console.log(fc.firstElementChild);//returns null
