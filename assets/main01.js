@@ -204,8 +204,24 @@ const accessParent = document.querySelector('#answershow');
 // // lastChild/lastElementChild
 // console.log(accessParent.lastChild);
 // console.log(accessParent.lastElementChild);
-const fc = document.querySelector('.fc');
-// console.log(fc.children) //empty
-// console.log(fc.children) //empty
-console.log(fc.firstChild); //returns a text node
-console.log(fc.firstElementChild);//returns null
+// const fc = document.querySelector('.fc');
+// // console.log(fc.children) //empty
+// // console.log(fc.children) //empty
+// console.log(fc.firstChild); //returns a text node
+// console.log(fc.firstElementChild);//returns null
+
+// Parent access container
+const liSingleEl = document.querySelector('#answershow > li');
+
+console.log(liSingleEl.parentElement.parentElement.parentElement.parentElement) // go for the main element
+console.log(liSingleEl.closest('.content')); //Return the same main element
+
+// console.log(liSingleEl.parentElement);
+// console.log(liSingleEl.parentNode);
+
+// console.log(document.body.parentNode);
+// console.log(document.body.parentElement);
+
+// console.log(document.documentElement.parentNode);
+// console.log(document.nodeType);
+// console.log(document.documentElement.parentElement);
