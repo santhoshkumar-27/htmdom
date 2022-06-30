@@ -211,7 +211,7 @@ const accessParent = document.querySelector('#answershow');
 // console.log(fc.firstElementChild);//returns null
 
 // Parent access container
-const liSingleEl = document.querySelector('#answershow > li');
+// const liSingleEl = document.querySelector('#answershow > li');
 
 // console.log(liSingleEl.parentElement.parentElement.parentElement.parentElement) // go for the main element
 // console.log(liSingleEl.closest('.content')); //Return the same main element
@@ -227,9 +227,55 @@ const liSingleEl = document.querySelector('#answershow > li');
 // console.log(document.documentElement.parentElement);
 
 
-console.log(liSingleEl.nextSibling);//returns a node
-console.log(liSingleEl.nextElementSibling);//returns a html element
+// console.log(liSingleEl.nextSibling);//returns a node
+// console.log(liSingleEl.nextElementSibling);//returns a html element
 
 
-console.log(liSingleEl.previousSibling); //returns a node
-console.log(liSingleEl.previousElementSibling); //returns a html element
+// console.log(liSingleEl.previousSibling); //returns a node
+// console.log(liSingleEl.previousElementSibling); //returns a html element
+
+const inputEl = document.querySelector('.sec-1 > div > input');
+
+
+//you can get attributes value by Dot Notation
+// console.log('inputEl', inputEl.value);
+
+// console.log('newValue', inputEl);
+// inputEl.value = 'change from dom' //this is will not affect the index.html only change the DOM.
+// we need to change the html use setAttribute it will change the html
+
+// inputEl.setAttribute('value', 'from attribute');
+// const isActive = inputEl.getAttribute('isActive');
+// console.log('isActive',typeof isActive);
+
+
+// console.log(inputEl.attributes[6].value);
+// console.log(inputEl.attributes[6].name);
+
+// console.log(inputEl.attributes.isActive);
+// console.log(inputEl.attributes.isActive.value);
+// console.log(inputEl.attributes['isActive'].value);
+
+// console.log(inputEl.hasAttribute('isActive'));
+// inputEl.removeAttribute('isActive');
+
+// console.log(inputEl.getAttribute('style'));
+// console.log(inputEl.style)
+
+
+// data-* attributes
+// console.log(inputEl.dataset);
+// for(let a in inputEl.dataset) {
+//     console.log(a)
+// }
+console.dir(inputEl);
+console.log(inputEl.attributes);
+// for(let b of inputEl.attributes) { //now in the array format
+//     console.log(b)
+//     console.log(`${b.name} ${b.value}`)
+// }
+
+for(let a in inputEl.attributes) {
+    // console.log(a);
+    console.log(inputEl.attributes[a]);
+}
