@@ -213,8 +213,8 @@ const accessParent = document.querySelector('#answershow');
 // Parent access container
 const liSingleEl = document.querySelector('#answershow > li');
 
-console.log(liSingleEl.parentElement.parentElement.parentElement.parentElement) // go for the main element
-console.log(liSingleEl.closest('.content')); //Return the same main element
+// console.log(liSingleEl.parentElement.parentElement.parentElement.parentElement) // go for the main element
+// console.log(liSingleEl.closest('.content')); //Return the same main element
 
 // console.log(liSingleEl.parentElement);
 // console.log(liSingleEl.parentNode);
@@ -225,3 +225,11 @@ console.log(liSingleEl.closest('.content')); //Return the same main element
 // console.log(document.documentElement.parentNode);
 // console.log(document.nodeType);
 // console.log(document.documentElement.parentElement);
+
+
+console.log(liSingleEl.nextSibling);//returns a node
+console.log(liSingleEl.nextElementSibling);//returns a html element
+
+
+console.log(liSingleEl.previousSibling); //returns a node
+console.log(liSingleEl.previousElementSibling); //returns a html element
