@@ -60,6 +60,12 @@ main > .sec-2 > div {
     background: white;
     padding: 30px;
     border-radius: 10px;
+    margin-bottom: 5px;
+}
+.sec-3 {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
 }
 .food-container {
     list-style: none;

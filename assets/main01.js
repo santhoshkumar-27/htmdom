@@ -268,14 +268,39 @@ const inputEl = document.querySelector('.sec-1 > div > input');
 // for(let a in inputEl.dataset) {
 //     console.log(a)
 // }
-console.dir(inputEl);
-console.log(inputEl.attributes);
-// for(let b of inputEl.attributes) { //now in the array format
-//     console.log(b)
-//     console.log(`${b.name} ${b.value}`)
+// console.dir(inputEl);
+// console.log(inputEl.attributes);
+// // for(let b of inputEl.attributes) { //now in the array format
+// //     console.log(b)
+// //     console.log(`${b.name} ${b.value}`)
+// // }
+
+// for(let a in inputEl.attributes) {
+//     // console.log(a);
+//     console.log(inputEl.attributes[a]);
 // }
 
-for(let a in inputEl.attributes) {
-    // console.log(a);
-    console.log(inputEl.attributes[a]);
-}
+const buttonEl = document.querySelector('.sec-3 > div > button');
+// style="padding: 5px 10px;border: none;border-radius: 5px;background: aliceblue;outline: none;";
+
+// 1.setAttribute
+// buttonEl.setAttribute('style', "padding: 5px 10px;border: none;border-radius: 5px;background: aliceblue;outline: none;");
+
+// 2.Direct Apply CSS
+// buttonEl.style.padding = '5px 10px';
+// buttonEl.style.border = 'none';
+// buttonEl.style.borderRadius = '5px';
+// buttonEl.style.background = 'aliceblue';
+// buttonEl.style.outline = 'none';
+
+//3.cssText
+buttonEl.style.cssText = "padding: 5px 10px;border: none;border-radius: 5px;background: aliceblue;outline: none;";
+// buttonEl.style.cssText += "font-weight:600;letter-spacing: 5px;cursor: pointer;"
+// console.log(buttonEl.style.cssText);
+
+//getting the styles
+// console.log(buttonEl.style.outline);
+
+// getting the global style
+// console.log(window.getComputedStyle(buttonEl));
+console.log(window.getComputedStyle(buttonEl, ':hover'));

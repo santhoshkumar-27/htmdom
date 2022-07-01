@@ -57,4 +57,4 @@ for(let container of containerEl) {
     // console.log(container.textContent.replace('x', ''));
     containerValue.push(container.textContent.replace('x', ''));
 }
-console.log('container value', containerValue);
+// console.log('container value', containerValue);
