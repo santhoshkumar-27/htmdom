@@ -280,7 +280,7 @@ const inputEl = document.querySelector('.sec-1 > div > input');
 //     console.log(inputEl.attributes[a]);
 // }
 
-const buttonEl = document.querySelector('.sec-3 > div > button');
+// const buttonEl = document.querySelector('.sec-3 > div > button');
 // style="padding: 5px 10px;border: none;border-radius: 5px;background: aliceblue;outline: none;";
 
 // 1.setAttribute
@@ -294,7 +294,7 @@ const buttonEl = document.querySelector('.sec-3 > div > button');
 // buttonEl.style.outline = 'none';
 
 //3.cssText
-buttonEl.style.cssText = "padding: 5px 10px;border: none;border-radius: 5px;background: aliceblue;outline: none;";
+// buttonEl.style.cssText = "padding: 5px 10px;border: none;border-radius: 5px;background: aliceblue;outline: none;";
 // buttonEl.style.cssText += "font-weight:600;letter-spacing: 5px;cursor: pointer;"
 // console.log(buttonEl.style.cssText);
 
@@ -303,4 +303,23 @@ buttonEl.style.cssText = "padding: 5px 10px;border: none;border-radius: 5px;back
 
 // getting the global style
 // console.log(window.getComputedStyle(buttonEl));
-console.log(window.getComputedStyle(buttonEl, ':hover'));
+// console.log(window.getComputedStyle(buttonEl, ':hover'));
+// const inputEle = document.querySelector('.sec-3 > div > input');
+// console.log(inputEle);
+
+//get class 
+// inputEle.className += ' className1 className2 className3 className4';
+// Array.from(inputEle.classList).forEach((x) => console.log('class name',x))
+
+const buttonClick = document.querySelector('.sec-3 > div > button:last-child');
+console.log('buttonClick', buttonClick.textContent)
+buttonClick.addEventListener('click', function() {
+    document.querySelector('.sec-3 > div:nth-child(2)').classList.toggle('hide')
+    if(buttonClick.textContent == 'Hide Div') {
+        buttonClick.textContent = 'Show Div'
+        buttonClick.style.backgroundColor = 'blue';
+    } else {
+        buttonClick.textContent = 'Hide Div';
+        buttonClick.style.backgroundColor = 'grey';
+    }
+})

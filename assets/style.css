@@ -115,3 +115,10 @@ main > .sec-2 > div {
     font-size: 1rem;
     cursor: pointer;
 }
+.input-padding {
+    padding: 5px 10px;
+}
+.hide {
+    visibility: hidden;
+    transition: visibility 0.2s cubic-bezier(0.56, 0.96, 0.58, 1) 00.5s;
+}
