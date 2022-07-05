@@ -312,7 +312,7 @@ const inputEl = document.querySelector('.sec-1 > div > input');
 // Array.from(inputEle.classList).forEach((x) => console.log('class name',x))
 
 const buttonClick = document.querySelector('.sec-3 > div > button:last-child');
-console.log('buttonClick', buttonClick.textContent)
+// console.log('buttonClick', buttonClick.textContent)
 buttonClick.addEventListener('click', function() {
     document.querySelector('.sec-3 > div:nth-child(2)').classList.toggle('hide')
     if(buttonClick.textContent == 'Hide Div') {
@@ -323,3 +323,37 @@ buttonClick.addEventListener('click', function() {
         buttonClick.style.backgroundColor = 'grey';
     }
 })
+
+const h1 = document.querySelector('header h1');
+function callBack(click) {
+    console.log('click', click);
+}
+// h1.onclick = callBack; // use this
+// h1.onclick = callBack() // don't use this because of the function doesn't return anything to do
+// h1.onclick = function(click) {
+//     console.log('click', click);
+// }
+// h1.setAttribute('onclick', 'console.log("click",event)')
+// console.log('h1', h1);
+// window.addEventListener()
+// document.addEventListener()
+// Element.addEventListener()
+
+// in javascript we use method name only like click, scrollup, scrolldown,
+// but in html attribute we use a onclick ,onscrollup, onscrolldown 'on' - prefix
+// document.addEventListener('click', function(event){
+//     console.log('clicked')
+// })
+// document.addEventListener('click', callBack()); //do not use this because it will call the method after the this line
+document.addEventListener('click', callBack);// we need to refer the function once the click event trigger's
+
+//If every event listener trigger it will recieve the event object
+document.addEventListener('click', normalFunction)
+//difference between normal function and arrow function
+// function normalFunction() {
+//     console.log('this',this); // in normal function always refer to target
+// }
+//but in arrow function is always refer to window object or global object
+const normalFunction = () => {
+    console.log('this', this);
+}
