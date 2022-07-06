@@ -358,7 +358,7 @@ function callBack(click) {
 // }
 //but in arrow function is always refer to window object or global object
 const normalFunction = () => {
-    console.log('clicked');
+    // console.log('clicked');
 }
 document.addEventListener('click', normalFunction, {once: true}) //add event listener options it will once is true it will listener for 1time
 
@@ -366,3 +366,33 @@ setTimeout(() => {
     // document.removeEventListener('click', normalFunction);
     //if we want to remove event listener the reference should be same as in addeventlistener;
 }, 5000);
+
+document.getElementById('section1').addEventListener('click', ()=> {
+    console.log('From section1');
+})
+document.getElementById('div1').addEventListener('click', (event)=> {
+    // event.stopPropagation();
+    //When dispatched in a tree, invoking this method prevents event from reaching any objects other than the current object.
+    event.stopImmediatePropagation();
+    //Invoking this method prevents event from reaching any registered event listeners after the current one finishes running and, when dispatched in a tree, also prevents event from reaching any other objects.
+    console.log('from div1');
+});
+document.getElementById('p1').addEventListener('click', ()=> {
+    console.log('from p1');
+});
+// document.getElementById('div1').addEventListener('click', ()=> {
+//     console.log('from div1 - 2');
+// });
+
+// document.getElementById('p1').addEventListener('click',()=> {}, {capture: true});
+
+for(let element of document.querySelectorAll('#section1, #section1 *')){
+    console.log(element)
+    element.addEventListener('click', ()=> {
+        console.log('capturing phase',element.tagName)
+    }, {capture: true});
+
+    element.addEventListener('click', () =>  {
+        console.log('bubbling', element.tagName)
+    })
+}
