@@ -345,15 +345,24 @@ function callBack(click) {
 //     console.log('clicked')
 // })
 // document.addEventListener('click', callBack()); //do not use this because it will call the method after the this line
-document.addEventListener('click', callBack);// we need to refer the function once the click event trigger's
+// document.addEventListener('click', callBack);// we need to refer the function once the click event trigger's
 
 //If every event listener trigger it will recieve the event object
-document.addEventListener('click', normalFunction)
+// document.addEventListener('click', normalFunction)
 //difference between normal function and arrow function
 // function normalFunction() {
 //     console.log('this',this); // in normal function always refer to target
 // }
+// function normalFunction() {
+//     console.log('clicked')
+// }
 //but in arrow function is always refer to window object or global object
 const normalFunction = () => {
-    console.log('this', this);
+    console.log('clicked');
 }
+document.addEventListener('click', normalFunction, {once: true}) //add event listener options it will once is true it will listener for 1time
+
+setTimeout(() => {
+    // document.removeEventListener('click', normalFunction);
+    //if we want to remove event listener the reference should be same as in addeventlistener;
+}, 5000);
