@@ -313,9 +313,9 @@ const inputEl = document.querySelector('.sec-1 > div > input');
 
 const buttonClick = document.querySelector('.sec-3 > div > button:last-child');
 // console.log('buttonClick', buttonClick.textContent)
-buttonClick.addEventListener('click', function() {
+buttonClick.addEventListener('click', function () {
     document.querySelector('.sec-3 > div:nth-child(2)').classList.toggle('hide')
-    if(buttonClick.textContent == 'Hide Div') {
+    if (buttonClick.textContent == 'Hide Div') {
         buttonClick.textContent = 'Show Div'
         buttonClick.style.backgroundColor = 'blue';
     } else {
@@ -357,42 +357,65 @@ function callBack(click) {
 //     console.log('clicked')
 // }
 //but in arrow function is always refer to window object or global object
-const normalFunction = () => {
-    // console.log('clicked');
-}
-document.addEventListener('click', normalFunction, {once: true}) //add event listener options it will once is true it will listener for 1time
+// const normalFunction = () => {
+//     // console.log('clicked');
+// }
+// document.addEventListener('click', normalFunction, {once: true}) //add event listener options it will once is true it will listener for 1time
 
-setTimeout(() => {
-    // document.removeEventListener('click', normalFunction);
-    //if we want to remove event listener the reference should be same as in addeventlistener;
-}, 5000);
+// setTimeout(() => {
+//     // document.removeEventListener('click', normalFunction);
+//     //if we want to remove event listener the reference should be same as in addeventlistener;
+// }, 5000);
 
-document.getElementById('section1').addEventListener('click', ()=> {
-    console.log('From section1');
-})
-document.getElementById('div1').addEventListener('click', (event)=> {
-    // event.stopPropagation();
-    //When dispatched in a tree, invoking this method prevents event from reaching any objects other than the current object.
-    event.stopImmediatePropagation();
-    //Invoking this method prevents event from reaching any registered event listeners after the current one finishes running and, when dispatched in a tree, also prevents event from reaching any other objects.
-    console.log('from div1');
-});
-document.getElementById('p1').addEventListener('click', ()=> {
-    console.log('from p1');
-});
+// document.getElementById('section1').addEventListener('click', ()=> {
+//     console.log('From section1');
+// })
+// document.getElementById('div1').addEventListener('click', (event)=> {
+//     // event.stopPropagation();
+//     //When dispatched in a tree, invoking this method prevents event from reaching any objects other than the current object.
+//     event.stopImmediatePropagation();
+//     //Invoking this method prevents event from reaching any registered event listeners after the current one finishes running and, when dispatched in a tree, also prevents event from reaching any other objects.
+//     console.log('from div1');
+// });
+// document.getElementById('p1').addEventListener('click', ()=> {
+//     console.log('from p1');
+// });
 // document.getElementById('div1').addEventListener('click', ()=> {
 //     console.log('from div1 - 2');
 // });
 
 // document.getElementById('p1').addEventListener('click',()=> {}, {capture: true});
 
-for(let element of document.querySelectorAll('#section1, #section1 *')){
-    console.log(element)
-    element.addEventListener('click', ()=> {
-        console.log('capturing phase',element.tagName)
-    }, {capture: true});
+// for(let element of document.querySelectorAll('#section1, #section1 *')){
+//     console.log(element)
+//     element.addEventListener('click', ()=> {
+//         console.log('capturing phase',element.tagName)
+//     }, {capture: true});
 
-    element.addEventListener('click', () =>  {
-        console.log('bubbling', element.tagName)
-    })
-}
+//     element.addEventListener('click', () =>  {
+//         console.log('bubbling', element.tagName)
+//     })
+// }
+// const submitBtn = document.querySelector("[type='submit']")
+// // console.log('submitBtn', submitBtn);
+// submitBtn.addEventListener('click', (event) => {
+//     // event.preventDefault(); //prevents default from false value
+
+//     console.log('prevent Default', event.defaultPrevented);
+// }, { passive: true });
+
+
+// For Event Delgation
+/* taking longer time applying a addeventlistener for every child element of li*/
+// const listEl = document.querySelectorAll('form li');
+// console.log('listEl', listEl);
+// listEl.forEach((li) => {
+//     li.addEventListener('click', (event) => {
+//         console.log('event', event.target.id)
+//     })
+// })   //Doing this format it will increase the preformance time
+/* Rather apply addeventlistener for Parent Element that is called Event Delagation*/
+const ulEl = document.querySelector('form ul');
+ulEl.addEventListener('click', (event) => {
+    console.log('event', event.target);
+})
