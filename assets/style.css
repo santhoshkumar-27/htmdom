@@ -129,3 +129,6 @@ main > .sec-2 > div {
     background-color: rgb(92, 92, 184);
     transition: all 1s;
 }
+.active {
+    background-color: lightblue;
+}

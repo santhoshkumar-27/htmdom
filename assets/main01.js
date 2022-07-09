@@ -415,7 +415,24 @@ function callBack(click) {
 //     })
 // })   //Doing this format it will increase the preformance time
 /* Rather apply addeventlistener for Parent Element that is called Event Delagation*/
+var selectLi;
 const ulEl = document.querySelector('form ul');
 ulEl.addEventListener('click', (event) => {
-    console.log('event', event.target);
+    const target = event.target;
+    selectLi && selectLi.classList.remove('active');
+    // if(!!selectLi){
+    //     selectLi.classList.remove('active')
+    // }
+    selectLi = target;
+    target.classList.add('active')
+
+});
+
+const supportEl = document.querySelector('#support > button');
+const toggleId = supportEl.dataset.toggleId;
+const toggleElement = document.getElementById(toggleId);
+
+supportEl.addEventListener('click', (event) => {
+    toggleElement.hidden = !toggleElement.hidden
 })
+console.log('supportEl', supportEl);
