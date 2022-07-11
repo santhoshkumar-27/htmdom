@@ -30,7 +30,7 @@
 //     console.log('mouse over', event);
 // })
 
-document.addEventListener('mousedown', (event) => {
+document.addEventListener('mouseup', (event) => {
     switch (event.which) {
         case 1:
             alert('you clicked left mouse button');
