@@ -145,3 +145,53 @@ main > .sec-2 > div {
 .clear .show {
     display: inline;
 }
+
+/* for feed back field */
+
+.section-center {
+    padding: 1rem;
+    width: fit-content;
+    margin: auto;
+}
+.p-1 {
+    padding: 1rem;
+}
+.form-control {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+label {
+    margin-left: 1rem;
+    text-transform: capitalize;
+}
+input[type="text"] {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+input[type="email"] {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+textarea#your-suggestion {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.d-flex {
+    display: flex;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.align-items-center {
+    align-items: center;
+}
+.mx-auto {
+    margin: auto;
+}
