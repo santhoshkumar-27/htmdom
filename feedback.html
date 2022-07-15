@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <!-- oncontextmenu="return false" oncopy="return false" -->
+
 <body id="app2" oncontextmenu="return false">
     <header>
         <h1 class="fc">Food Corner</h1>
@@ -22,38 +23,38 @@
         <form action="" id="form1" name="feedbackform">
             <div class="form-control fullName">
                 <label for="name">Name</label>
-                <input type="text" name="Name" value="" placeholder="Enter your name">
+                <input type="text" name="Name" value="" placeholder="Enter your name" required>
             </div>
             <div class="form-control">
                 <label>choose your options</label>
                 <div class="d-flex align-items-center">
                     <label for="general-suggestion" class="p-1">general</label>
-                    <input type="radio" name="suggestions" value="general" id="general-suggestion">
+                    <input type="radio" name="suggestions" value="general" id="general-suggestion" required>
                 </div>
                 <div class="d-flex align-items-center">
-                    <label for="technical-suggestion"  class="p-1">technical</label>
-                    <input type="radio" name="suggestions" value="technical" id="technical-suggestion">
+                    <label for="technical-suggestion" class="p-1">technical</label>
+                    <input type="radio" name="suggestions" value="technical" id="technical-suggestion" required>
                 </div>
                 <div class="d-flex align-items-center">
-                    <label for="contribution-suggestion"  class="p-1">contribution</label>
-                    <input type="radio" name="suggestions" value="contribution" id="contribution-suggestion">
+                    <label for="contribution-suggestion" class="p-1">contribution</label>
+                    <input type="radio" name="suggestions" value="contribution" id="contribution-suggestion" required>
                 </div>
             </div>
             <div class="form-control">
                 <label for="email">Email</label>
-                <input type="email" name="Email" value="" placeholder="Enter your email">
+                <input type="email" name="Email" value="" placeholder="Enter your email" required>
             </div>
             <div class="form-control">
                 <label for="your-suggestion">Your suggestions</label>
-                <textarea name="sugggestionDetail" value="" id="your-suggestion" cols="30" rows="10"></textarea>
+                <textarea name="sugggestionDetail" value="" id="your-suggestion" cols="30" rows="10" required></textarea>
             </div>
             <div class="form-control">
                 <label for="terms" class="mx-auto">
-                    <input type="checkbox" id="terms" name="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
                     I accept terms and condition
                 </label>
             </div>
-            <div class="form-control" >
+            <div class="form-control">
                 <button type="submit" class="mx-auto fc-button">I Submit</button>
             </div>
         </form>
