@@ -37,37 +37,60 @@ const formEl = document.forms.feedbackform; //by name
 //     event.preventDefault();
 // });
 
-const handleSubmit = (event) => {
-  // console.log('event', event);
-  // console.log('name', Name.value);
-  // console.log('suggestions', suggestions.value);
-  // console.log('Email', Email.value);
-  // console.log('sugggestionDetail', sugggestionDetail.value);
-  // console.log('terms', terms.checked);  //Lets look another method
-  event.preventDefault();
-  const formdata = new FormData(formEl);
-  const data = [...formdata.entries()];
-  // console.log(data);
-  // const datastring = data.map((arr) => `${arr[0]}=${arr[1].replace(/\s/g,'+')}`)
-  // const datastring = data.map((arr) => `${encodeURIComponent(arr[0])}=${encodeURIComponent(arr[1])}`)
-  // const datastring = data.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-  // const datastring = data.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&') //old way of doing
-  // console.log(datastring);
+const handleSubmit = function(event) {
+    // console.log('event', event);
+    // console.log('name', Name.value);
+    // console.log('suggestions', suggestions.value);
+    // console.log('Email', Email.value);
+    // console.log('sugggestionDetail', sugggestionDetail.value);
+    // console.log('terms', terms.checked);  //Lets look another method
+    event.preventDefault();
+    const formdata = new FormData(formEl);
+    const data = [...formdata.entries()];
+    // console.log(data);
+    // const datastring = data.map((arr) => `${arr[0]}=${arr[1].replace(/\s/g,'+')}`)
+    // const datastring = data.map((arr) => `${encodeURIComponent(arr[0])}=${encodeURIComponent(arr[1])}`)
+    // const datastring = data.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    // const datastring = data.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&') //old way of doing
+    // console.log(datastring);
 
-  // const datastring2 = new URLSearchParams(data) //new way of doing
-  // console.log(datastring2.toString());
-  //object.fromEntries converts 2d array to objects
+    // const datastring2 = new URLSearchParams(data) //new way of doing
+    // console.log(datastring2.toString());
+    //object.fromEntries converts 2d array to objects
 
-  //1) query strings content-type: application-x-www-form-urlencoded
-  //?Name=Pascale+Arnold&suggestions=technical&Email=xafi%40mailinator.com&sugggestionDetail=Minima+ut+molestias+&terms=on
+    //1) query strings content-type: application-x-www-form-urlencoded
+    //?Name=Pascale+Arnold&suggestions=technical&Email=xafi%40mailinator.com&sugggestionDetail=Minima+ut+molestias+&terms=on
 
-  //2 string format JSON
-  // const formJsonData = Object.fromEntries(data);
-  // const jsondata = JSON.stringify(formJsonData);
-  // console.log('formJsonData', formJsonData);
-  // console.log('jsondata', jsondata);
+    //2 string format JSON
+    const formJsonData = Object.fromEntries(data);
+    const jsondata = JSON.stringify(formJsonData);
+    // console.log('formJsonData', formJsonData);
+    // console.log('jsondata', jsondata);
+
+
+    //1. send data to backend old method
+    const resp = document.getElementById('resp');
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('get', 'https://reqres.in/api/users?page=1');
+    // xhr.send();
+    // xhr.onload = function() {
+    //     resp.innerText = xhr.responseText;
+    //     // console.dir('response', resp);
+    //     // console.log('response', xhr.responseText);
+    // }
+    //2. using the fetch api NEW METHOD
+    fetch('https://reqres.in/api/users?page=2', {
+            method: 'GET'
+                // method: 'POST',
+                // body: jsondata
+        }).then((res) => res.json())
+        .then((data) => {
+            const data1 = data.data
+            resp.innerText = JSON.stringify(data1);
+        })
 };
 
+// console.log('response', resp);
 // const handleFormData = (event) => {
 //   const formData1 = event.formData;
 //   formData1.set('key1', 'value1');
@@ -78,6 +101,6 @@ const handleSubmit = (event) => {
 //   console.log('formData get', formData1.has('suggestions')); //check the form has a property
 //   console.log('formData get', [...formData1.keys()]); //check the form has a property
 // };
-// formEl.addEventListener('submit', handleSubmit);
+formEl.addEventListener('submit', handleSubmit);
 
 // formEl.addEventListener('formdata', handleFormData); //this is will call only if the mention formData in our code
