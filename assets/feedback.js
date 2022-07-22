@@ -37,6 +37,29 @@ const formEl = document.forms.feedbackform; //by name
 //     event.preventDefault();
 // });
 
+const nameEl = formEl.elements.Name
+    // console.log('formEl', nameEl);
+    // // nameEl.readOnly = true;
+    // // nameEl.disabled = true;
+    // nameEl.addEventListener('focus', () => console.log('focused'));
+    // nameEl.addEventListener('blur', () => console.log('blured'));
+    // nameEl.addEventListener('input', (e) => console.log('inputed', e.target.value)); // it triggers every time when user enter values
+    // nameEl.addEventListener('change', (e) => console.log('changed', e.target.value)); //it triggers when user entered the values and click outside the input field
+
+// nameEl.focus(); // it will focus the input field when page loads has default
+// nameEl.blur();
+
+// nameEl.addEventListener('cut', () => console.log('cut'));
+// nameEl.addEventListener('copy', () => console.log('copy'));
+// nameEl.addEventListener('paste', () => console.log('paste'));
+const nameValue = document.getElementById('nameValue')
+    //one way binding
+    // nameEl.addEventListener('input', (event) => {
+    //     nameValue.innerText = event.target.value;
+    // })
+    // nameEl.addEventListener('change', (event) => {
+    //     nameValue.innerText = event.target.value;
+    // })
 const handleSubmit = function(event) {
     // console.log('event', event);
     // console.log('name', Name.value);
@@ -45,8 +68,9 @@ const handleSubmit = function(event) {
     // console.log('sugggestionDetail', sugggestionDetail.value);
     // console.log('terms', terms.checked);  //Lets look another method
     event.preventDefault();
-    const formdata = new FormData(formEl);
-    const data = [...formdata.entries()];
+    // using formData
+    // const formdata = new FormData(formEl);
+    // const data = [...formdata.entries()];
     // console.log(data);
     // const datastring = data.map((arr) => `${arr[0]}=${arr[1].replace(/\s/g,'+')}`)
     // const datastring = data.map((arr) => `${encodeURIComponent(arr[0])}=${encodeURIComponent(arr[1])}`)
@@ -62,14 +86,14 @@ const handleSubmit = function(event) {
     //?Name=Pascale+Arnold&suggestions=technical&Email=xafi%40mailinator.com&sugggestionDetail=Minima+ut+molestias+&terms=on
 
     //2 string format JSON
-    const formJsonData = Object.fromEntries(data);
-    const jsondata = JSON.stringify(formJsonData);
+    // const formJsonData = Object.fromEntries(data);
+    // const jsondata = JSON.stringify(formJsonData);
     // console.log('formJsonData', formJsonData);
     // console.log('jsondata', jsondata);
 
 
     //1. send data to backend old method
-    const resp = document.getElementById('resp');
+    // const resp = document.getElementById('resp');
     // const xhr = new XMLHttpRequest();
     // xhr.open('get', 'https://reqres.in/api/users?page=1');
     // xhr.send();
@@ -79,15 +103,15 @@ const handleSubmit = function(event) {
     //     // console.log('response', xhr.responseText);
     // }
     //2. using the fetch api NEW METHOD
-    fetch('https://reqres.in/api/users?page=2', {
-            method: 'GET'
-                // method: 'POST',
-                // body: jsondata
-        }).then((res) => res.json())
-        .then((data) => {
-            const data1 = data.data
-            resp.innerText = JSON.stringify(data1);
-        })
+    // fetch('https://reqres.in/api/users?page=2', {
+    //         method: 'GET'
+    //             // method: 'POST',
+    //             // body: jsondata
+    //     }).then((res) => res.json())
+    //     .then((data) => {
+    //         const data1 = data.data
+    //         resp.innerText = JSON.stringify(data1);
+    //     })
 };
 
 // console.log('response', resp);
