@@ -37,14 +37,15 @@ const formEl = document.forms.feedbackform; //by name
 //     event.preventDefault();
 // });
 
-const nameEl = formEl.elements.Name
-    // console.log('formEl', nameEl);
-    // // nameEl.readOnly = true;
-    // // nameEl.disabled = true;
-    // nameEl.addEventListener('focus', () => console.log('focused'));
-    // nameEl.addEventListener('blur', () => console.log('blured'));
-    // nameEl.addEventListener('input', (e) => console.log('inputed', e.target.value)); // it triggers every time when user enter values
-    // nameEl.addEventListener('change', (e) => console.log('changed', e.target.value)); //it triggers when user entered the values and click outside the input field
+// input tag
+// const nameEl = formEl.elements.Name
+// console.log('formEl', nameEl);
+// // nameEl.readOnly = true;
+// // nameEl.disabled = true;
+// nameEl.addEventListener('focus', () => console.log('focused'));
+// nameEl.addEventListener('blur', () => console.log('blured'));
+// nameEl.addEventListener('input', (e) => console.log('inputed', e.target.value)); // it triggers every time when user enter values
+// nameEl.addEventListener('change', (e) => console.log('changed', e.target.value)); //it triggers when user entered the values and click outside the input field
 
 // nameEl.focus(); // it will focus the input field when page loads has default
 // nameEl.blur();
@@ -52,6 +53,25 @@ const nameEl = formEl.elements.Name
 // nameEl.addEventListener('cut', () => console.log('cut'));
 // nameEl.addEventListener('copy', () => console.log('copy'));
 // nameEl.addEventListener('paste', () => console.log('paste'));
+
+// const radioEl = formEl.elements.suggestions;
+// console.log('readioEl', radioEl);
+// const radioElArr = [...radioEl];
+// console.log(radioElArr);
+// // const
+// const handleRadioEvent = (event) => {
+//     // console.log('event', event.target.value)
+//     setTimeout(() => {
+//         alert('Thanks for contirbuting' + ' ' + event.target.value);
+//     }, 1000);
+// }
+// radioElArr.forEach((radio) => {
+//     // console.log(radio.checked)
+//     radio.addEventListener('change', handleRadioEvent);
+// });
+// radioElArr[1].select();
+// radioElArr[1].checked = true;
+
 const nameValue = document.getElementById('nameValue')
     //one way binding
     // nameEl.addEventListener('input', (event) => {
