@@ -72,14 +72,28 @@ const formEl = document.forms.feedbackform; //by name
 // radioElArr[1].select();
 // radioElArr[1].checked = true;
 
-const nameValue = document.getElementById('nameValue')
-    //one way binding
-    // nameEl.addEventListener('input', (event) => {
-    //     nameValue.innerText = event.target.value;
-    // })
-    // nameEl.addEventListener('change', (event) => {
-    //     nameValue.innerText = event.target.value;
-    // })
+//radio buttons 
+// const hobbiesEl = formEl.elements.hobby;
+// const radioList = [...hobbiesEl];
+// console.log('radiolist', radioList);
+// radioList.map((radio) => {
+//     // radio.indeterminate = true;
+//     // radio.select();
+//     // radio.checked = true;
+//     radio.addEventListener('change', (event) => {
+//         // console.log('hobbiesel', hobbiesEl);
+//         // console.log('checked', event.target.value, event.target.checked)
+//     });
+// })
+
+const nameValue = document.getElementById('nameValue');
+//one way binding
+// nameEl.addEventListener('input', (event) => {
+//     nameValue.innerText = event.target.value;
+// })
+// nameEl.addEventListener('change', (event) => {
+//     nameValue.innerText = event.target.value;
+// })
 const handleSubmit = function(event) {
     // console.log('event', event);
     // console.log('name', Name.value);
