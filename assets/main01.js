@@ -2,13 +2,16 @@ let values = [];
 let textFieldValue = document.getElementById('text-value');
 let ul = document.getElementById('answershow')
 let foodItems = ul.getElementsByClassName('food-item')
+let count = document.getElementById('count');
+count.innerText = 0;
 // console.log('ul', ul.parentNode.insertBefore(li, ul))
 const clearEl = document.getElementById('clear');
 
 clearEl.addEventListener('click', (event) => {
     clearEl.classList.add('hide1')
-    textFieldValue.value='';
+    textFieldValue.value = '';
 })
+
 function printValue() {
     if (textFieldValue.value) {
         clearEl.classList.add('hide1')
@@ -23,7 +26,7 @@ function printValue() {
         li.append(span, div);
         // li.appendChild(document.createTextNode(textFieldValue.value))
         // ul.appendChild(li);
-        ul.append(li);// append means adding element to lastchild
+        ul.append(li); // append means adding element to lastchild
         // ul.prepend(li) //prepend means adding element to firstchild
         // ul.before(li) //adding element before the any element
         // ul.after(li) // adding element after the any element
@@ -43,16 +46,26 @@ function printValue() {
         // console.log(foodItems)
         createAlertViaDom();
         attachItemRemoveListener();
+        refreshUI();
     }
 }
 
+function refreshUI() {
+    count.innerText = ul.children.length;
+    if (ul.children.length > 0) {
+        document.getElementById('noList').style.display = 'none'
+    } else {
+        document.getElementById('noList').style.display = 'block'
+    }
+    console.log('adfasdf', ul.children)
+}
 textFieldValue.addEventListener('keyup', (event) => {
-    if(event.key == "Enter" && textFieldValue.value.length > 0) {
+    if (event.key == "Enter" && textFieldValue.value.length > 0) {
         printValue();
     }
-    if(textFieldValue.value && clearEl.classList.contains('hide1')) {
+    if (textFieldValue.value && clearEl.classList.contains('hide1')) {
         clearEl.classList.remove('hide1')
-    }else if(!(textFieldValue.value.length > 0)) {
+    } else if (!(textFieldValue.value.length > 0)) {
         clearEl.classList.add('hide1')
     }
 })
@@ -60,9 +73,10 @@ textFieldValue.addEventListener('keyup', (event) => {
 function attachItemRemoveListener() {
     const clicks = Array.from(document.querySelectorAll('.click'));
     clicks.map((el) => {
-        el.addEventListener('click', function (event) {
+        el.addEventListener('click', function(event) {
             const elRemove = event.target.parentNode;
             elRemove.remove(); //new way;
+            refreshUI();
             // elRemove.parentNode.removeChild(elRemove); //old way
         });
     });

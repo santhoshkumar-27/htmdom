@@ -119,6 +119,7 @@ const handleSubmit = function(event) {
     // console.log('sugggestionDetail', sugggestionDetail.value);
     // console.log('terms', terms.checked);  //Lets look another method
     event.preventDefault();
+    alert('Thanks for submitting');
     // using formData
     // const formdata = new FormData(formEl);
     // const data = [...formdata.entries()];
