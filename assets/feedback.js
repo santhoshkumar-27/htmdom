@@ -85,8 +85,25 @@ const formEl = document.forms.feedbackform; //by name
 //         // console.log('checked', event.target.value, event.target.checked)
 //     });
 // })
-
-const nameValue = document.getElementById('nameValue');
+// const countryEl = formEl.elements.country;
+// console.log(countryEl);
+// countryEl.addEventListener('change', (event) => {
+//     console.log('country', countryEl.value) //get
+// });
+// // countryEl.value = 'india' //set
+// // console.log('country', countryEl);
+// const createOptions = document.createElement('option'); //with dom
+// createOptions.value = 'south africa'
+// createOptions.text = 'south africa'
+// createOptions.id = 'south africa';
+// const newoptions = new Option('america', 'usa'); //with javascript
+// countryEl.add(createOptions, 0);
+// countryEl.add(newoptions, 3);
+// // add method is default value method
+// countryEl.remove(0);
+// countryEl.selectedIndex = 1;
+// console.log('country', countryEl.options[countryEl.selectedIndex]);
+// const nameValue = document.getElementById('nameValue');
 //one way binding
 // nameEl.addEventListener('input', (event) => {
 //     nameValue.innerText = event.target.value;
